@@ -1,0 +1,14 @@
+[2024-10-23 22:45:13.290] [103640] [HailoRT] [error] [driver_os_specific.cpp:112] [get_line_from_file] CHECK failed - Failed open /sys/class/hailo_chardev/hailo0/accelerator_type
+[2024-10-23 22:45:13.290] [103640] [HailoRT] [error] [driver_os_specific.cpp:129] [query_device_info] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:45:13.290] [103640] [HailoRT] [error] [driver_os_specific.cpp:72] [scan_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36) - Failed parsing device info for hailo0
+[2024-10-23 22:45:13.290] [103640] [HailoRT] [error] [driver_os_specific.cpp:96] [scan_nnc_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:45:13.290] [103640] [HailoRT] [error] [hailort_driver.cpp:282] [scan_all_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:45:13.290] [103640] [HailoRT] [error] [pcie_device.cpp:35] [scan] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:45:13.290] [103640] [HailoRT] [error] [device.cpp:61] [scan] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:48:08.289] [103735] [HailoRT] [error] [driver_os_specific.cpp:112] [get_line_from_file] CHECK failed - Failed open /sys/class/hailo_chardev/hailo0/accelerator_type
+[2024-10-23 22:48:08.289] [103735] [HailoRT] [error] [driver_os_specific.cpp:129] [query_device_info] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:48:08.289] [103735] [HailoRT] [error] [driver_os_specific.cpp:72] [scan_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36) - Failed parsing device info for hailo0
+[2024-10-23 22:48:08.289] [103735] [HailoRT] [error] [driver_os_specific.cpp:96] [scan_nnc_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:48:08.289] [103735] [HailoRT] [error] [hailort_driver.cpp:282] [scan_all_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:48:08.289] [103735] [HailoRT] [error] [pcie_device.cpp:35] [scan] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
+[2024-10-23 22:48:08.289] [103735] [HailoRT] [error] [device.cpp:61] [scan] CHECK_SUCCESS failed with status=HAILO_DRIVER_FAIL(36)
