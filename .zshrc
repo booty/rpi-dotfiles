@@ -42,6 +42,37 @@ z.up() {
   git pull
 }
 
+HISTFILE=~/.zsh_history
+HISTSIZE=100000 # number kept in memory
+SAVEHIST=500000 # number of commands saved to ~/.zsh_history
+
+# Append history entries as they are entered, rather than waiting for the shell session to end
+setopt INC_APPEND_HISTORY
+
+# Share history between all sessions
+setopt SHARE_HISTORY
+
+# Avoid duplicate entries
+setopt HIST_IGNORE_ALL_DUPS
+
+# Append to the history file rather than overwriting it
+setopt APPEND_HISTORY
+
+# ----[ Fzf and Zsh ]----
+
+if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+else
+    echo "Warning: fzf key-bindings.zsh not found!"
+fi
+
+if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
+    source /usr/share/doc/fzf/examples/completion.zsh
+else
+    echo "Warning: fzf completion.zsh not found!"
+fi
+
+
 # ----------------------
 # ----[ Zsh Prompt ]----
 # ----------------------
