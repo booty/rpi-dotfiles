@@ -1,11 +1,11 @@
+# Linux noob note: this runs for interactive shells 
+# As opposed to .zprofile, which runs when logging into the system
+
 echo ".zshrc loading, bro"
 
+# --------------- 
 # ----[ zsh ]----
-
-# note: need to install!
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# ---------------
 
 # Enable Zsh's completion system
 autoload -Uz compinit
@@ -42,7 +42,9 @@ z.up() {
   git pull
 }
 
+# ----------------------
 # ----[ Zsh Prompt ]----
+# ----------------------
 
 autoload -Uz vcs_info
 
@@ -63,12 +65,14 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' formats "${branch_color}(%b)${reset}"
 
 # Define the prompt
-PROMPT='${user_color}%n@%m ${dir_color}%~ ${time_color}%* ${vcs_info_msg_0_}${reset} %# '
+PROMPT='${dir_color}%~ ${vcs_info_msg_0_}${reset} %# '
 
 # Right prompt (optional, shows exit code if non-zero)
 RPROMPT='%F{red}%?%f'
 
+# ---------------------
 # ----[ Apt stuff ]----
+# ---------------------
 
 a.up() {
   sudo apt update && \
@@ -78,7 +82,9 @@ a.up() {
   sudo apt autoclean -y
 }
 
+# -----------------
 # ----[ Hailo ]----
+# -----------------
 
 h.diag() {
   lspci | grep Hailo && \
@@ -92,7 +98,9 @@ h.diagfull() {
   gst-inspect-1.0 hailo
 }
 
-# ----[ Git stuff ]----
+# ---------------
+# ----[ Git ]----
+# ---------------
 
 alias gs="git status"
 alias ga="git add"
@@ -103,20 +111,29 @@ alias gd="git diff"
 alias gco="git checkout"
 alias gb="git branch"
 
-# ----[ Python stuff ]----
+# ------------------
+# ----[ Python ]----
+# ------------------
 
 alias act="source venv/bin/activate"
 alias deact="deactivate"
 alias venv="python3 -m venv venv"
 
+# ---------------------
 # ----[ Run stuff ]----
+# ---------------------
 
 eval "$(zoxide init zsh)"
 
-# ----[ Misc ]----
+# connect to the existing ssh-agent (launched in .zprofile)
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+fi
 
-export LANG='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
+# ----------------
+# ----[ Misc ]----
+# ----------------
 
 alias reload="source ~/.zshrc"
 

@@ -106,3 +106,25 @@ Then, cool. Download some code.
 cd ~/Documents/code
 git clone git@github.com:hailo-ai/hailo-rpi5-examples.git
 ```
+
+## PiHole
+
+[Follow the most recent install directions.](https://github.com/pi-hole/pi-hole/#one-step-automated-install)
+
+There are serveral ways in which the RPi OS might be managing network connections. This has apparently changed a few times over the years.
+
+Currently it seems to be using `NetworkManager`.
+
+```bash
+nmcli connection show
+```
+
+With the connection name from above:
+
+```bash
+sudo nmcli connection modify "<connection_name>" ipv4.ignore-auto-dns yes
+sudo nmcli connection modify "<connection_name>" ipv4.dns "127.0.0.1,192.168.0.1"
+nmcli connection down "<connection_name>"
+nmcli connection up "<connection_name>"
+nmcli device show | grep IP4.DNS
+```
